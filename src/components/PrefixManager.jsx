@@ -56,7 +56,10 @@ export default function PrefixManager({
           }}
           className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-semibold bg-[#00e676]/10 text-[#00e676] border border-[#00e676]/30 hover:bg-[#00e676]/20 transition-all cursor-pointer self-start sm:self-auto"
         >
-          <Plus className="w-3.5 h-3.5" />
+          <Plus
+            className="w-3.5 h-3.5 transition-transform duration-300"
+            style={{ transform: showAddForm ? 'rotate(45deg)' : 'rotate(0deg)' }}
+          />
           <span>{showAddForm ? 'Cancel' : 'Add Custom Prefix'}</span>
         </button>
       </div>

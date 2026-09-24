@@ -12,7 +12,7 @@ export default function SuffixConfig({ digitCount, onDigitCountChange }) {
           <span>Choose Suffix Digits</span>
         </div>
         <div className="flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-zinc-800/80 border border-zinc-700 text-xs font-mono text-[#00e676]">
-          <span>Pattern: -{"9".repeat(Math.min(digitCount, 6))}{digitCount > 6 ? '...' : ''}</span>
+          <span>Pattern: -{"9".repeat(Math.min(digitCount, 3))}{digitCount > 6 ? '..' : ''}</span>
         </div>
       </div>
 
@@ -29,11 +29,10 @@ export default function SuffixConfig({ digitCount, onDigitCountChange }) {
               key={count}
               type="button"
               onClick={() => onDigitCountChange(count)}
-              className={`px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold transition-all duration-150 cursor-pointer ${
-                isSelected
+              className={`px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold transition-all duration-150 cursor-pointer ${isSelected
                   ? 'bg-[#00e676] text-zinc-950 font-bold shadow-[0_0_12px_rgba(0,230,118,0.3)]'
                   : 'bg-zinc-800/80 text-zinc-300 hover:bg-zinc-700 hover:text-white border border-zinc-700/60'
-              }`}
+                }`}
             >
               {count} Digits
             </button>
