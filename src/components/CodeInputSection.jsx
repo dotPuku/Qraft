@@ -1,4 +1,3 @@
-import React from 'react';
 import { RefreshCw, Copy, Check, Edit3, Trash, Sparkles } from 'lucide-react';
 
 export default function CodeInputSection({
@@ -7,8 +6,6 @@ export default function CodeInputSection({
   onGenerateNew,
   onCopyText,
   hasCopied,
-  activePrefix,
-  digitCount
 }) {
   return (
     <div className="bg-[#1b1d24] border border-zinc-800/80 rounded-2xl p-5 sm:p-6 shadow-xl relative">
@@ -18,7 +15,7 @@ export default function CodeInputSection({
           <span>Total Code (Editable) &amp; Generator</span>
         </div>
         <div className="text-xs text-zinc-400 hidden sm:block">
-          Format: <span className="font-mono text-zinc-300">{activePrefix || 'PREFIX'}-{"#".repeat(digitCount)}</span>
+          <span className="font-mono text-zinc-300">PREFIX-######</span>
         </div>
       </div>
 

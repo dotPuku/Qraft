@@ -133,19 +133,18 @@ export default function PrefixManager({
 
               return (
                 <div
-                  key={prefix}
+                  key={prefix._id}
                   className="group relative flex items-center"
                 >
                   <button
                     type="button"
-                    onClick={() => onSelectPrefix(prefix)}
-                    className={`w-full text-left sm:text-center pl-3 pr-8 py-2.5 rounded-xl font-mono text-xs sm:text-sm font-bold tracking-wide transition-all duration-200 cursor-pointer flex items-center justify-between gap-1.5 ${
-                      isSelected
-                        ? 'bg-[#00e676] text-zinc-950 shadow-[0_0_15px_rgba(0,230,118,0.35)] scale-[1.01]'
-                        : 'bg-zinc-800/80 hover:bg-zinc-750 text-zinc-200 hover:text-white border border-zinc-700/60 hover:border-zinc-500'
-                    }`}
+                    onClick={() => onSelectPrefix(prefix.prefix)}
+                    className={`w-full text-left sm:text-center pl-3 pr-8 py-2.5 rounded-xl font-mono text-xs sm:text-sm font-bold tracking-wide transition-all duration-200 cursor-pointer flex items-center justify-between gap-1.5 ${isSelected
+                      ? 'bg-[#00e676] text-zinc-950 shadow-[0_0_15px_rgba(0,230,118,0.35)] scale-[1.01]'
+                      : 'bg-zinc-800/80 hover:bg-zinc-750 text-zinc-200 hover:text-white border border-zinc-700/60 hover:border-zinc-500'
+                      }`}
                   >
-                    <span className="truncate">{prefix}</span>
+                    <span className="truncate">{prefix.prefix}</span>
                     {isSelected && <Sparkles className="w-3 h-3 flex-shrink-0" />}
                   </button>
 
@@ -156,12 +155,11 @@ export default function PrefixManager({
                       e.stopPropagation();
                       onDeletePrefix(prefix);
                     }}
-                    title={`Delete prefix ${prefix}`}
-                    className={`absolute right-1.5 top-1/2 -translate-y-1/2 p-1 rounded-md transition-all cursor-pointer ${
-                      isSelected
-                        ? 'text-zinc-900/60 hover:text-zinc-950 hover:bg-black/10'
-                        : 'text-zinc-400 hover:text-rose-400 hover:bg-zinc-900/80 opacity-70 group-hover:opacity-100'
-                    }`}
+                    title={`Delete prefix ${prefix.prefix}`}
+                    className={`absolute right-1.5 top-1/2 -translate-y-1/2 p-1 rounded-md transition-all cursor-pointer ${isSelected
+                      ? 'text-zinc-900/60 hover:text-zinc-950 hover:bg-black/10'
+                      : 'text-zinc-400 hover:text-rose-400 hover:bg-zinc-900/80 opacity-70 group-hover:opacity-100'
+                      }`}
                   >
                     <Trash2 className="w-3.5 h-3.5" />
                   </button>

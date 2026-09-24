@@ -1,4 +1,3 @@
-// Utility for generating random numeric digits
 export function generateRandomDigits(count) {
   const digits = Math.max(1, Math.min(count, 32));
   let result = '';
@@ -14,19 +13,3 @@ export function formatPrefix(str) {
   if (!str) return '';
   return str.toUpperCase().replace(/_/g, '-');
 }
-
-// Default initial prefixes using hyphen instead of underscore
-export const INITIAL_PREFIXES = [
-  'BB-NOW',
-  'PBS',
-  'PBM',
-  'PBHM',
-  'PBL',
-  'INSULATED',
-  'PCM-PAD',
-  'CRATE',
-  'SB-IFC'
-];
-
-// ONLY prefix list is stored in localStorage
-export const STORAGE_PREFIXES_KEY = 'qr_saved_prefixes';
